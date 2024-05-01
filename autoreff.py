@@ -54,10 +54,9 @@ for email, password in emails_passwords:
             
             driver.sleep(10)  # Do nothing for the given amount of time.
             url =""
-            driver.get(url)
+            driver.driver.uc_open_with_reconnect(url, 3)
 
             # Double Check 
-            driver.driver.uc_open_with_reconnect(url, 3)
             if not driver.is_text_visible("Sign Up", 'h4'):
                 driver.sleep(1)
                 driver.driver.uc_open_with_reconnect(url, 4)
